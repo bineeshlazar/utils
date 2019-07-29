@@ -23,6 +23,8 @@
 
 #include "external/MemoryPool/C-11/MemoryPool.h"
 
+namespace utils {
+
 class threadpool {
 	typedef std::function<void()> taskfunc;
 
@@ -95,4 +97,5 @@ public:
 	}
 };
 
+}
 #endif /* THREADPOOL_HPP_ */

@@ -15,6 +15,8 @@
 #include <stdexcept>
 #include <memory>
 
+namespace utils {
+
 template<class Item, class Alloc = std::allocator<Item>>
 class channel {
 private:
@@ -74,5 +76,7 @@ public:
 		return true;
 	}
 };
+
+}
 
 #endif /* CHANNEL_HPP_ */

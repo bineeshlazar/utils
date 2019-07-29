@@ -17,6 +17,8 @@
 #include <memory>
 #include "external/MemoryPool/C-11/MemoryPool.h"
 
+namespace utils {
+
 template <class T, size_t BlockSize = 4096>
 class mempool {
 
@@ -40,5 +42,6 @@ public:
      }
 };
 
+}
 
 #endif /* MEMPOOL_HPP_ */
