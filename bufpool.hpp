@@ -16,6 +16,7 @@
 #include <mutex>
 #include <memory>
 #include <array>
+#include <algorithm>
 #include "external/MemoryPool/C-11/MemoryPool.h"
 
 namespace utils {
@@ -45,6 +46,7 @@ public:
      {
          std::unique_lock<std::mutex> lock(m_mutex);
          buf_t *ptr = m_pool.allocate();
+         std::fill(ptr->begin(), ptr->end(), 0);
          return std::shared_ptr<elem>(ptr->data(), [this, ptr](elem *){
              std::unique_lock<std::mutex> lock(this->m_mutex);
              this->m_pool.deallocate(ptr);
