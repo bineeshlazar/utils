@@ -47,7 +47,9 @@ public:
           {
             std::unique_lock<std::mutex> lock(this->m_taskq_mtx);
 
-            this->m_cv.wait(lock, [this]() { return this->m_stopped || !this->m_tasks.empty(); });
+            this->m_cv.wait(lock, [this]() {
+              return this->m_stopped || !this->m_tasks.empty();
+            });
 
             if (this->m_tasks.empty() && this->m_stopped) {
               return;
