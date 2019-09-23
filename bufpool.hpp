@@ -10,8 +10,8 @@
  * Returns shared pointer to buffer
  */
 
-#ifndef MEMPOOL_HPP_
-#define MEMPOOL_HPP_
+#ifndef _BUFPOOL_HPP_
+#define _BUFPOOL_HPP_
 
 #include <algorithm>
 #include <array>
@@ -59,4 +59,4 @@ public:
 
 }
 
-#endif /* MEMPOOL_HPP_ */
+#endif /* _BUFPOOL_HPP_ */
